@@ -1,0 +1,24 @@
+promxy:
+  server_groups:
+    - static_configs:
+        - targets:
+          - cortex1:9009
+      anti_affinity: 10s
+      scheme: http
+      http_client:
+        tls_config:
+          insecure_skip_verify: true
+      remote_read: true
+      remote_read_path: api/v1/read
+      path_prefix: /api/prom
+    - static_configs:
+        - targets:
+          - cortex2:9009
+      anti_affinity: 10s
+      scheme: http
+      http_client:
+        tls_config:
+          insecure_skip_verify: true
+      remote_read: true
+      remote_read_path: api/v1/read
+      path_prefix: /api/prom

@@ -1,0 +1,11 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+remote_read:
+- url: http://cortex1:9009/api/prom/api/v1/read
+  read_recent: true
+- url: http://cortex2:9009/api/prom/api/v1/read
+  read_recent: true

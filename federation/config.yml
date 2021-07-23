@@ -1,0 +1,4 @@
+backends:
+  - http://localhost:9001/api/prom
+  - http://localhost:9002/api/prom
+
